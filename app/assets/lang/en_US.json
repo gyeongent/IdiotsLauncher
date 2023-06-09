@@ -1,0 +1,49 @@
+{
+    "html": {
+        "avatarOverlay": "편집"
+    },
+    "js": {
+        "login": {
+            "error": {
+                "invalidValue": "* 잘못된 값",
+                "requiredValue": "* 필수 요소",
+                "userMigrated": {
+                    "title": "Error During Login:<br>잘못된 자격 증명",
+                    "desc": "마이그레이션된 계정으로 로그인을 시도했습니다. 계정에 사용된 이메일을 사용자 이름으로 사용하여 다시 시도하십시오."
+                },
+                "invalidCredentials": {
+                    "title": "Error During Login:<br>잘못된 자격 증명",
+                    "desc": "입력한 이메일 또는 암호가 잘못되었습니다. 다시 시도하십시오."
+                },
+                "rateLimit": {
+                    "title": "Error During Login:<br>너무 많은 시도",
+                    "desc": "최근 이 계정으로 로그인 시도가 너무 많습니다. 나중에 다시 시도해 주십시오."
+                },
+                "noInternet": {
+                    "title": "Error During Login:<br>인터넷 연결 없음",
+                    "desc": "로그인하려면 인터넷에 연결되어 있어야 합니다. 연결하고 다시 시도하십시오."
+                },
+                "authDown": {
+                    "title": "Error During Login:<br>인증 서버가 오프라인입니다.",
+                    "desc": "Mojang의 인증 서버가 현재 오프라인이거나 연결할 수 없습니다. 잠시 기다렸다가 다시 시도하십시오. 서버 상태는 <a href=\"https://help.mojang.com/\">모장의 도움말 포털에서 확인할 수 있습니다.</a>"
+                },
+                "notPaid": {
+                    "title": "Error During Login:<br>정품이 아닙니다.",
+                    "desc": "로그인 하려는 계정이 마인크래프트를 구입하지 않은 상태입니다.<br><a href=\"https://minecraft.net/\">Minecraft.net</a>에서 구입하실 수 있습니다."
+                },
+                "unknown": {
+                    "title": "Error During Login:<br>Unknown Error"
+                }
+            },
+            "login": "로그인",
+            "loggingIn": "로그인 중",
+            "success": "성공",
+            "tryAgain": "다시 시도"
+        },
+        "landing": {
+            "launch": {
+                "pleaseWait": "잠시만 기다려주세요..."
+            }
+        }
+    }
+}
