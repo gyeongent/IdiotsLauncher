@@ -5,7 +5,7 @@
   "description": "현현의 숲 마인크래프트 이벤트",
   "author": "Lee GyeongMin (https://gyeong.net/)",
   "license": "MIT",
-  "homepage": "https://hyunu.gyeong.net/",
+  "homepage": "https://github.com/gyeongent/HyunHyunLauncher",
   "private": true,
   "main": "index.js",
   "scripts": {
@@ -41,6 +41,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dscalzi/HeliosLauncher.git"
+    "url": "git+https://github.com/gyeongent/HyunHyunLauncher.git"
   }
 }
