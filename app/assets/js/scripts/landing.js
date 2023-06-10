@@ -125,7 +125,7 @@ document.getElementById('launch_button').addEventListener('click', async e => {
         }
     } catch(err) {
         loggerLanding.error('Unhandled error in during launch process.', err)
-        showLaunchFailure('실행 도중 오류가 발생했습니다.', '콘솔창을 열어 (CTRL + Shift + i) 더 확인해보세요.')
+        showLaunchFailure('실행 도중 오류가 발생했습니다.', '콘솔창을 열어 (CTRL + Shift + i) 오류 사항을 참조하십시오.')
     }
 })
 
@@ -317,10 +317,10 @@ async function asyncSystemScan(effectiveJavaOptions, launchAfter = true){
         // If the result is null, no valid Java installation was found.
         // Show this information to the user.
         setOverlayContent(
-            'No Compatible<br>Java Installation Found',
-            `In order to join WesterosCraft, you need a 64-bit installation of Java ${effectiveJavaOptions.suggestedMajor}. Would you like us to install a copy?`,
-            'Install Java',
-            'Install Manually'
+            '호환되는<br>Java 설치를 찾을 수 없습니다.',
+            `현현의 숲에 참가하려면 64비트 버전의 Java ${effectiveJavaOptions.suggestedMajor}가 설치되어 있어야 합니다. 복사본을 설치하시겠습니까?`,
+            'Java 설치',
+            '아니요. 수동설치 하겠습니다.'
         )
         setOverlayHandler(() => {
             setLaunchDetails('자바 다운로드 준비 중..')
@@ -338,9 +338,9 @@ async function asyncSystemScan(effectiveJavaOptions, launchAfter = true){
                 //$('#overlayDismiss').toggle(false)
                 setOverlayContent(
                     '실행하려면<br>Java가 필요합니다.',
-                    `A valid x64 installation of Java ${effectiveJavaOptions.suggestedMajor} is required to launch.<br><br>Please refer to our <a href="https://github.com/dscalzi/HeliosLauncher/wiki/Java-Management#manually-installing-a-valid-version-of-java">Java Management Guide</a> for instructions on how to manually install Java.`,
-                    'I Understand',
-                    'Go Back'
+                    `실행하려면 유효한 x64버전의 Java ${effectiveJavaOptions.suggestedMajor}이(가) 필요합니다.<br><br>Java를 수동으로 설치하는 방법에 대한 지침은 당사의 <a href="https://github.com/dscalzi/HeliosLauncher/wiki/Java-Management#manually-installing-a-valid-version-of-java">Java Management Guide</a>를 참조하십시오.`,
+                    '알겠습니다.',
+                    '뒤로가기'
                 )
                 setOverlayHandler(() => {
                     toggleLaunchArea(false)
@@ -465,7 +465,7 @@ async function dlAsync(login = true) {
         onDistroRefresh(distro)
     } catch(err) {
         loggerLaunchSuite.error('Unable to refresh distribution index.', err)
-        showLaunchFailure('Fatal Error', 'Could not load a copy of the distribution index. See the console (CTRL + Shift + i) for more details.')
+        showLaunchFailure('Fatal Error', '배포 색인에 대한 복사본을 로드할 수 없습니다. 자세한 내용은 콘솔(CTRL + Shift + i)을 참조하십시오.')
         return
     }
 
@@ -616,7 +616,7 @@ async function dlAsync(login = true) {
             proc.stdout.on('data', tempListener)
             proc.stderr.on('data', gameErrorListener)
 
-            setLaunchDetails('끝났어요. 현현의 숲에 어서 오세요!')
+            setLaunchDetails('끝났어요.\n현현의 숲에 어서 오세요!')
 
             // Init Discord Hook
             if(distro.rawDistribution.discord != null && serv.rawServerdiscord != null){

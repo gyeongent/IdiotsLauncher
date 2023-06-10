@@ -42,13 +42,13 @@ if(!isDev){
         switch(arg){
             case 'checking-for-update':
                 loggerAutoUpdater.info('Checking for update..')
-                settingsUpdateButtonStatus('업데이트가 있는지 확인하는 중..', true)
+                settingsUpdateButtonStatus('새로운 업데이트가 있는지 확인하는 중..', true)
                 break
             case 'update-available':
                 loggerAutoUpdater.info('New update available', info.version)
                 
                 if(process.platform === 'darwin'){
-                    info.darwindownload = `https://github.com/dscalzi/HeliosLauncher/releases/download/v${info.version}/Helios-Launcher-setup-${info.version}${process.arch === 'arm64' ? '-arm64' : '-x64'}.dmg`
+                    info.darwindownload = `https://github.com/gyeongent/HyunHyunLauncher/releases/download/v${info.version}/HyunHyunForest-Installer-${info.version}${process.arch === 'arm64' ? '-arm64' : '-x64'}.dmg`
                     showUpdateUI(info)
                 }
                 
