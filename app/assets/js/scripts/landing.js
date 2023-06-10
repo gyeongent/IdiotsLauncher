@@ -125,7 +125,7 @@ document.getElementById('launch_button').addEventListener('click', async e => {
         }
     } catch(err) {
         loggerLanding.error('Unhandled error in during launch process.', err)
-        showLaunchFailure('Error During Launch', 'See console (CTRL + Shift + i) for more details.')
+        showLaunchFailure('실행 도중 오류가 발생했습니다.', '콘솔창을 열어 (CTRL + Shift + i) 더 확인해보세요.')
     }
 })
 
