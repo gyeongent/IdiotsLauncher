@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    
+    <channel>
+        <title>현현의 숲</title>
+        <link>https://hyunu.gyeong.net/</link>
+        <item>
+            <title>현현의 숲 런처가 배포되었습니다.</title>
+            <content:encoded>
+                <![CDATA[ <p>오류 수정을 위해 항상 최신버전을 유지하여주세요.</p></br><p>문의사항이 있으실 시 디스코드 @gyeong으로 문의해주세요 :)</p>]]>
+            </content:encoded>
+            <pubDate>Mon, 12 Jun 2023</pubDate>
+        </item>
+    </channel>
+</rss>
