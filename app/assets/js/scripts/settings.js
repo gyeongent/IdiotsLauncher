@@ -483,10 +483,10 @@ function bindAuthAccountLogOut(){
             if(Object.keys(ConfigManager.getAuthAccounts()).length === 1){
                 isLastAccount = true
                 setOverlayContent(
-                    'Warning<br>This is Your Last Account',
-                    'In order to use the launcher you must be logged into at least one account. You will need to login again after.<br><br>Are you sure you want to log out?',
-                    'I\'m Sure',
-                    'Cancel'
+                    '경고<br>등록되어 있는 마지막 계정입니다.',
+                    '런처를 사용하려면 하나 이상의 계정에 로그인해야 합니다. 다음에 다시 로그인해야 합니다.<br><br>로그아웃하시겠습니까?',
+                    '로그아웃',
+                    '취소'
                 )
                 setOverlayHandler(() => {
                     processLogOut(val, isLastAccount)
@@ -659,7 +659,7 @@ function populateAuthAccounts(){
                 <div class="settingsAuthAccountActions">
                     <button class="settingsAuthAccountSelect" ${selectedUUID === acc.uuid ? 'selected>계정 선택됨 &#10004;' : '>계정 선택'}</button>
                     <div class="settingsAuthAccountWrapper">
-                        <button class="settingsAuthAccountLogOut">Log Out</button>
+                        <button class="settingsAuthAccountLogOut">로그아웃</button>
                     </div>
                 </div>
             </div>
@@ -1351,12 +1351,12 @@ async function populateJavaExecDetails(execPath){
 }
 
 function populateJavaReqDesc(server) {
-    settingsJavaReqDesc.innerHTML = `Requires Java ${server.effectiveJavaOptions.suggestedMajor} x64.`
+    settingsJavaReqDesc.innerHTML = `Java ${server.effectiveJavaOptions.suggestedMajor} x64가 필요합니다.`
 }
 
 function populateJvmOptsLink(server) {
     const major = server.effectiveJavaOptions.suggestedMajor
-    settingsJvmOptsLink.innerHTML = `Available Options for Java ${major} (HotSpot VM)`
+    settingsJvmOptsLink.innerHTML = `Java ${major}(HotSpot VM)에 사용 가능한 옵션`
     if(major >= 12) {
         settingsJvmOptsLink.href = `https://docs.oracle.com/en/java/javase/${major}/docs/specs/man/java.html#extra-options-for-java`
     }
