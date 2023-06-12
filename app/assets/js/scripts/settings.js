@@ -1544,7 +1544,7 @@ function populateSettingsUpdateInformation(data){
         settingsUpdateButtonStatus('업데이트 확인', false, () => {
             if(!isDev){
                 ipcRenderer.send('autoUpdateAction', 'checkForUpdate')
-                settingsUpdateButtonStatus('새로운 업데이트가 있는지 확인 중..', true)
+                settingsUpdateButtonStatus('새로운 업데이트를 확인하는 중..', true)
             }
         })
     }

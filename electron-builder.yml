@@ -1,6 +1,6 @@
 appId: 'hyunhyunforest'
 productName: '현현의 숲'
-artifactName: '${productName}-Installer-${version}.${ext}'
+artifactName: '${productName}-setup-${version}.${ext}'
 
 copyright: '© 2023 GYEONG.'
 
