@@ -2787,6 +2787,7 @@ input:checked + .toggleSwitchSlider:before {
     font-size: 13px;
     line-height: 1.5;
     text-align: left;
+    white-space: pre-line;
 }
 
 .newsArticleSpacerTop {
