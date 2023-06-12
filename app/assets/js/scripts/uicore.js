@@ -108,7 +108,7 @@ function showUpdateUI(info){
     //TODO Make this message a bit more informative `${info.version}`
     document.getElementById('image_seal_container').setAttribute('update', true)
     document.getElementById('image_seal_container').onclick = () => {
-        setOverlayContent('Update Available', 'A new update for the launcher is available. Would you like to install now?', 'Install', 'Later')
+        setOverlayContent('업데이트 사용가능', '런처에 대한 새로운 업데이트를 사용할 수 있습니다. 지금 설치하시겠습니까?', '지금 설치', '나중에 할게요')
         setOverlayHandler(() => {
             if(!isDev){
                 ipcRenderer.send('autoUpdateAction', 'installUpdateNow')

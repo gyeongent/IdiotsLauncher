@@ -22,6 +22,11 @@
     src: url('../fonts/NeoDunggeunmoPro-Regular.ttf');
 }
 
+@font-face {
+    font-family: "SDNRm";
+    src: url('../fonts/AsiaSDNRm.ttf');
+}
+
 /*******************************************************************************
  *                                                                             *
  * Element Styles                                                              *
@@ -1272,6 +1277,7 @@ body {
 .settingsFieldLeft {
     display: flex;
     flex-direction: column;
+    gap: 7px;
 }
 .settingsFieldTitle {
     font-size: 14px;
@@ -1282,6 +1288,9 @@ body {
     font-size: 12px;
     color: rgba(255, 255, 255, .95);
     margin-top: 5px;
+    font-family: 'SDNRm';
+    letter-spacing: -1px;
+    line-height: 15px;
 }
 .settingsDivider {
     height: 1px;
@@ -1374,6 +1383,12 @@ input:checked + .toggleSwitchSlider:before {
     width: 75%;
 }
 
+.settingsFileSelContent {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
 /* File selector title. */
 .settingsFileSelTitle {
     margin-bottom: 10px;
@@ -1407,6 +1422,9 @@ input:checked + .toggleSwitchSlider:before {
     padding: 5px 10px;
     font-size: 12px;
     height: 30px;
+    font-family: 'SDNRm';
+    font-size: 11px;
+    letter-spacing: -1px;
 }
 
 /* File selection button. */
@@ -1436,9 +1454,13 @@ input:checked + .toggleSwitchSlider:before {
     margin: 20px 0px;
     color: lightgrey;
     width: 89%;
+    font-family: 'SDNRm';
+    letter-spacing: -0.7px;
+    line-height: 1.5;
 }
 .settingsFileSelDesc strong {
-    font-family: 'Avenir Medium';
+    font-family: 'SDNRm';
+    font-size: 11px;
 }
 
 /* * *
@@ -1651,7 +1673,7 @@ input:checked + .toggleSwitchSlider:before {
     border-radius: 3px;
     display: flex;
     justify-content: space-between;
-    margin: 15px 0px;
+    margin: 25px 0px;
 }
 
 /* Div which will be populated with the selected server's information. */
@@ -1720,10 +1742,12 @@ input:checked + .toggleSwitchSlider:before {
 #settingsReqModsContent,
 #settingsOptModsContent,
 #settingsDropinModsContent {
-    font-size: 12px;
+    font-size: 13px;
     background: rgba(0, 0, 0, 0.25);
     border-radius: 3px;
     color: white;
+    font-family: 'SDNRm';
+    letter-spacing: -1px;
 }
 
 /* Mod elements. */
@@ -1861,6 +1885,8 @@ input:checked + .toggleSwitchSlider:before {
     color: lightgrey;
     font-weight: bold;
     width: 89%;
+    font-family: 'SDNRm';
+    letter-spacing: -0.7px;
 }
 
 /* Wrapper container. */
@@ -2079,6 +2105,8 @@ input:checked + .toggleSwitchSlider:before {
     margin: 20px 0px;
     color: lightgrey;
     font-weight: bold;
+    font-family: 'SDNRm';
+    letter-spacing: -0.7px;
 }
 
 /* Status text which displays details on the selected executable. */
@@ -2122,6 +2150,8 @@ input:checked + .toggleSwitchSlider:before {
     color: lightgrey;
     font-weight: bold;
     width: 89%;
+    font-family: 'SDNRm';
+    letter-spacing: -0.7px;
 }
 
 /* * *
@@ -2260,6 +2290,9 @@ input:checked + .toggleSwitchSlider:before {
     padding-bottom: 10px;
     margin-bottom: 10px;
     border-bottom: 1px solid rgba(126, 126, 126, 0.57);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 /* Changelog header label. */
 .settingsChangelogLabel {
@@ -2271,6 +2304,8 @@ input:checked + .toggleSwitchSlider:before {
 /* Changelog text content container. */
 .settingsChangelogText {
     font-size: 12px;
+    font-family: "SDNRm";
+    letter-spacing: -1px;
 }
 
 /* Styles for the changelog elements. */
@@ -2464,7 +2499,7 @@ input:checked + .toggleSwitchSlider:before {
     position: relative;
     transition: top 2s ease;
     top: 0px;
-    height: 77%;
+    height: 75%;
     display: flex;
 }
 #landingContainer > #upper > #left {
@@ -2490,7 +2525,7 @@ input:checked + .toggleSwitchSlider:before {
 
 /* Lower content container. */
 #landingContainer > #lower {
-    height: 23%;
+    height: 30%;
     display: flex;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
@@ -2530,7 +2565,7 @@ input:checked + .toggleSwitchSlider:before {
     transition: top 2s ease;
     top: 0px;
     height: 100%;
-    width: 33%;
+    width: 31%;
     display: inline-flex;
 }
 
@@ -2592,6 +2627,7 @@ input:checked + .toggleSwitchSlider:before {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    gap: 5px;
 }
 
 /* News title wrapper. */
@@ -2610,6 +2646,8 @@ input:checked + .toggleSwitchSlider:before {
     transition: 0.25s ease;
     outline: none;
     text-align: right;
+    word-break: keep-all;
+    line-height: 1.5;
 }
 #newsArticleTitle:hover,
 #newsArticleTitle:focus {
@@ -2744,6 +2782,11 @@ input:checked + .toggleSwitchSlider:before {
 
 #newsArticleContentWrapper {
     width: 80%;
+    font-family: 'SDNRm';
+    letter-spacing: -1px;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: left;
 }
 
 .newsArticleSpacerTop {
@@ -3214,17 +3257,19 @@ input:checked + .toggleSwitchSlider:before {
 /* Maintains maximum width on the status bar. */
 #server_status_wrapper {
     display: inline-flex;
-    width: 150px;
+    width: max-content;
     font-size: 15px;
 }
 
 /* Span which displays the player count of the selected server. */
 #player_count {
     color: #949494;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 900;
     text-shadow: 0px 0px 20px #949494;
     margin-left: 10px;
+    font-family: 'SDNRm';
+    letter-spacing: -0.7px;
 }
 
 /* Wrapper container for the mojang status bar. */
@@ -3401,9 +3446,11 @@ input:checked + .toggleSwitchSlider:before {
 
 /* Main launch content container. */
 #landingContainer > #lower > #right #launch_content {
-    position: relative;
-    top: 25px;
     display: inline-flex;
+    flex-direction: column;
+    align-items: end;
+    top: 25px;
+    gap: 10px;
 }
 
 /* The launch button. */
@@ -3414,7 +3461,7 @@ input:checked + .toggleSwitchSlider:before {
     font-weight: 900;
     letter-spacing: 2px;
     text-shadow: 0px 0px 0px #bebcbb;
-    font-size: 20px;
+    font-size: 40px;
     padding: 0px;
     transition: 0.25s ease;
     outline: none;
@@ -3450,7 +3497,7 @@ input:checked + .toggleSwitchSlider:before {
     font-weight: 900;
     letter-spacing: 1px;
     text-shadow: 0px 0px 0px #bebcbb;
-    font-size: 20px;
+    font-size: 25px;
     min-width: 53.21px;
     max-width: 53.21px;
     text-align: right;
@@ -3461,6 +3508,7 @@ input:checked + .toggleSwitchSlider:before {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 5px;
 }
 
 /* Button which opens the server selection view. */
@@ -3472,6 +3520,8 @@ input:checked + .toggleSwitchSlider:before {
     line-height: 24px;
     padding: 0px;
     transition: 0.25s ease;
+    font-family: 'SDNRm';
+    letter-spacing: -0.3px;
 }
 #server_selection_button:hover,
 #server_selection_button:focus {
@@ -3497,10 +3547,12 @@ input:checked + .toggleSwitchSlider:before {
 
 /* Span which displays information about the status of the launch process. */
 #launch_details_text {
-    font-size: 11px;
+    font-size: 12px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    font-family: 'SDNRm';
+    letter-spacing: -0.5px;
 }
 
 /*******************************************************************************
@@ -3785,6 +3837,8 @@ input:checked + .toggleSwitchSlider:before {
     font-size: 10px;
     line-height: 10px;
     font-weight: bold;
+    font-family: 'SDNRm';
+    letter-spacing: -1px;
 }
 
 /* Content container for the server listing's information. */
