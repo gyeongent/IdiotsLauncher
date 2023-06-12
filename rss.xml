@@ -11,10 +11,14 @@
         <item>
             <title>현현의 숲 런처가 배포되었습니다.</title>
             <link>https://github.com/gyeongent/HyunHyunLauncher/releases</link>
-            <content:encoded>
+            <content>
                 오류 수정을 위해 항상 최신버전을 유지하여 주세요.
                 문의사항이 있으실 시 디스코드 @gyeong으로 문의해주세요 :)
-            </content:encoded>
+
+                2023년 6월 12일 기준 최신버전은 v2.1.22이며, 설정에서 런처 탭에서 버전확인을 하시어
+                최신버전과 맞지 않을 경우, <link>https://github.com/gyeongent/HyunHyunLauncher/releases</link>에서
+                최신 릴리스를 다운로드해 주세요.
+            </content>
             <language>ko</language>
             <dc:creator>현현의 숲 런처 개발자</dc:creator>
             <pubDate>Mon, 12 Jun 2023</pubDate>
