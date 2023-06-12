@@ -33,15 +33,15 @@
     "helios-core": "~2.0.4",
     "helios-distribution-types": "^1.2.0",
     "jquery": "^3.6.4",
-    "semver": "^7.4.0",
-    "minimatch": "4.0.0"
+    "minimatch": "^9.0.1",
+    "semver": "^7.4.0"
   },
   "devDependencies": {
     "electron": "^24.1.1",
     "electron-builder": "^23.6.0",
     "eslint": "^8.38.0",
-    "nodemon": "^2.0.22",
-    "minimatch": "4.0.0"
+    "minimatch": "^9.0.1",
+    "nodemon": "^2.0.22"
   },
   "repository": {
     "type": "git",
