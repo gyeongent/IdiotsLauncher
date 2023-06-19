@@ -2663,6 +2663,8 @@ input:checked + .toggleSwitchSlider:before {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    font-family: 'SDNRm';
+    letter-spacing: -0.7px;
 }
 
 /* Date and author wrappers. */

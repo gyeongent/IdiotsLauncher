@@ -2,7 +2,7 @@ const remoteMain = require('@electron/remote/main')
 remoteMain.initialize()
 
 // Requirements
-const { app, BrowserWindow, ipcMain, Menu, shell } = require('electron')
+const { app, BrowserWindow, ipcMain, Menu, shell, Tray, nativeImage } = require('electron')
 const autoUpdater                       = require('electron-updater').autoUpdater
 const ejse                              = require('ejs-electron')
 const fs                                = require('fs')
@@ -10,7 +10,10 @@ const isDev                             = require('./app/assets/js/isdev')
 const path                              = require('path')
 const semver                            = require('semver')
 const { pathToFileURL }                 = require('url')
+const { Client }                        = require('@xhayper/discord-rpc')
 const { AZURE_CLIENT_ID, MSFT_OPCODE, MSFT_REPLY_TYPE, MSFT_ERROR, SHELL_OPCODE } = require('./app/assets/js/ipcconstants')
+
+const iconPath = `${__dirname}/app/assets/images/SealCircle.png`;
 
 // Setup auto updater.
 function initAutoUpdater(event, data) {
@@ -216,11 +219,15 @@ ipcMain.on(MSFT_OPCODE.OPEN_LOGOUT, (ipcEvent, uuid, isLastAccount) => {
     msftLogoutWindow.loadURL('https://login.microsoftonline.com/common/oauth2/v2.0/logout')
 })
 
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
+let isQuiting
 
 function createWindow() {
+
+    let tray = new Tray(nativeImage.createFromPath(iconPath));
 
     win = new BrowserWindow({
         width: 1280,
@@ -236,21 +243,49 @@ function createWindow() {
     })
     remoteMain.enable(win.webContents)
 
+    tray.setToolTip("현현의 숲");
+    const contextMenu = Menu.buildFromTemplate([
+        {
+            label: "열기",
+            type: "normal",
+            click(){
+                win.show();
+            }
+        },
+        {
+            label: "종료",
+            type: "normal",
+            role: "quit"
+        }
+    ]);
+
+    tray.on("click", () => (
+        (win.isVisible() ? win.hide() : win.show())
+    ));
+
+    tray.setContextMenu(contextMenu);
+
     ejse.data('bkid', Math.floor((Math.random() * fs.readdirSync(path.join(__dirname, 'app', 'assets', 'images', 'backgrounds')).length)))
 
     win.loadURL(pathToFileURL(path.join(__dirname, 'app', 'app.ejs')).toString())
 
-    /*win.once('ready-to-show', () => {
-        win.show()
-    })*/
+    // win.once('ready-to-show', () => {
+    //     win.show()
+    // })
 
     win.removeMenu()
 
     win.resizable = true
 
-    win.on('closed', () => {
-        win = null
+    win.on('minimize', function(event){
+        event.preventDefault();
+        win.hide();
     })
+
+    win.on('closed', function(event) {
+        event.preventDefault();
+    });
+    
 }
 
 function createMenu() {
@@ -351,3 +386,20 @@ app.on('activate', () => {
         createWindow()
     }
 })
+
+const startTimestamp = new Date().getTime()
+
+const client = new Client({
+    clientId: "1116616137988395029"
+});
+
+client.on("ready", () => {
+    client.user?.setActivity({
+        state: "HyunHyun (Minecraft 1.12.2)",
+        largeImageKey: "hhicon",
+        largeImageText: "현현의 숲 이벤트",
+        startTimestamp: startTimestamp
+    })
+})
+
+client.login();

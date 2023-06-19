@@ -483,7 +483,7 @@ function bindAuthAccountLogOut(){
             if(Object.keys(ConfigManager.getAuthAccounts()).length === 1){
                 isLastAccount = true
                 setOverlayContent(
-                    '경고<br>등록되어 있는 마지막 계정입니다.',
+                    '경고<br><br>등록되어 있는 마지막 계정입니다.',
                     '런처를 사용하려면 하나 이상의 계정에 로그인해야 합니다. 다음에 다시 로그인해야 합니다.<br><br>로그아웃하시겠습니까?',
                     '로그아웃',
                     '취소'

@@ -9,6 +9,17 @@
         <title>현현의 숲</title>
         <link>https://hyunu.gyeong.net/</link>
         <item>
+            <title>현현의 숲 2.2.0 사전 릴리스</title>
+            <link>https://github.com/gyeongent/HyunHyunLauncher/releases</link>
+            <content:encoded>
+                디스코드 프로필 활동 표시 및 기능을 포함한 릴리스가 배포중입니다.
+                런처 설정에서 사전 릴리스 사용을 허용하면 런처 업데이트에서 업데이트가 활성화 됩니다.
+            </content:encoded>
+            <language>ko</language>
+            <dc:creator>현현의 숲 런처 개발자</dc:creator>
+            <pubDate>Mon, 19 Jun 2023</pubDate>
+        </item>
+        <item>
             <title>현현의 숲 런처가 배포되었습니다.</title>
             <link>https://github.com/gyeongent/HyunHyunLauncher/releases</link>
             <content:encoded>

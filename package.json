@@ -1,6 +1,6 @@
 {
   "name": "hyunhyunforest",
-  "version": "2.1.22",
+  "version": "2.2.0",
   "productName": "현현의 숲 런처",
   "description": "현현의 숲 마인크래프트 이벤트",
   "author": "Lee GyeongMin (https://gyeong.net/)",
@@ -20,7 +20,9 @@
   },
   "dependencies": {
     "@electron/remote": "^2.0.8",
+    "@xhayper/discord-rpc": "^1.0.17",
     "adm-zip": "^0.5.9",
+    "discord-rpc-electron": "^4.0.1",
     "discord-rpc-patch": "^4.0.1",
     "ejs": "^3.1.9",
     "ejs-electron": "^2.1.1",
