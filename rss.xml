@@ -12,7 +12,10 @@
             <title>현현의 숲 런처가 배포되었습니다.</title>
             <link>https://github.com/gyeongent/HyunHyunLauncher/releases</link>
             <content:encoded>
-                현현의 숲 이벤트
+                현현의 숲 런처가 배포되었습니다! 플레이를 클릭하면 자동으로 게임파일이 다운로드됩니다.
+                
+                추가로 현현의 숲 시즌2에서는 따로 런처 자동 업데이트를 지원하지 않습니다.
+                이벤트 공지사항을 확인하시어 최신 버전을 유지해주세요.
             </content:encoded>
             <language>ko</language>
             <dc:creator>현현의 숲 런처 개발자</dc:creator>
