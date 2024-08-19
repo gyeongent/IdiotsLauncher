@@ -28,6 +28,9 @@
 
                 <a href="https://naver.com/" target="_blank">https://example.com/</a> 을 참조해주세요.
             </content:encoded>
+            <language>ko</language>
+            <dc:creator>현현의 숲 시즌2</dc:creator>
+            <pubDate>Sun, 18 Aug 2024</pubDate>
         </item>
     </channel>
 </rss>
