@@ -10,7 +10,6 @@
         <link>https://hyunu.gyeong.net/</link>
         <item>
             <title>현현의 숲 런처가 배포되었습니다.</title>
-            <link>https://github.com/gyeongent/HyunHyunLauncher/releases</link>
             <content:encoded>
                 현현의 숲 런처가 배포되었습니다! 플레이를 클릭하면 자동으로 게임파일이 다운로드됩니다.
                 
@@ -21,6 +20,14 @@
             <language>ko</language>
             <dc:creator>현현의 숲 런처 개발자</dc:creator>
             <pubDate>Sun, 18 Aug 2024</pubDate>
+        </item>
+        <item>
+            <title>현현의 숲 시즌2 위키</title>
+            <content:encoded>
+                현현의 숲 시즌2의 최신 패치와 가이드를 보시려면
+
+                <a href="https://naver.com/" target="_blank">https://example.com/</a> 을 참조해주세요.
+            </content:encoded>
         </item>
     </channel>
 </rss>
