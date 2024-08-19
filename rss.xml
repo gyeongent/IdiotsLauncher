@@ -21,17 +21,5 @@
             <dc:creator>현현의 숲 런처 개발자</dc:creator>
             <pubDate>Sun, 18 Aug 2024</pubDate>
         </item>
-        <item>
-            <title>현현의 숲 시즌2 위키</title>
-            <link>https://naver.com/</link>
-            <content:encoded>
-                현현의 숲 시즌2의 최신 패치와 가이드를 보시려면
-
-                <a href="https://naver.com/" target="_blank">https://example.com/</a> 을 참조해주세요.
-            </content:encoded>
-            <language>ko</language>
-            <dc:creator>현현의 숲 시즌2</dc:creator>
-            <pubDate>Sun, 18 Aug 2024</pubDate>
-        </item>
     </channel>
 </rss>
