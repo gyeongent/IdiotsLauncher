@@ -9,7 +9,6 @@ const { Type }      = require('helios-distribution-types')
 const AuthManager   = require('./assets/js/authmanager')
 const ConfigManager = require('./assets/js/configmanager')
 const { DistroAPI } = require('./assets/js/distromanager')
-const Lang          = require('./assets/js/langloader')
 
 let rscShouldLoad = false
 let fatalStartupError = false
@@ -69,8 +68,8 @@ async function showMainUI(data){
     updateSelectedServer(data.getServerById(ConfigManager.getSelectedServer()))
     refreshServerStatus()
     setTimeout(() => {
-        document.getElementById('frameBar').style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
-        document.body.style.backgroundImage = `url('assets/images/backgrounds/${document.body.getAttribute('bkid')}.jpg')`
+        document.getElementById('frameBar').style.backgroundColor = 'rgba(0, 0, 0, 0.50)'
+        document.body.style.backgroundImage = `url('assets/images/backgrounds/${document.body.getAttribute('bkid')}.png')`
         $('#main').show()
 
         const isLoggedIn = Object.keys(ConfigManager.getAuthAccounts()).length > 0
@@ -106,7 +105,7 @@ async function showMainUI(data){
     }, 750)
     // Disable tabbing to the news container.
     initNews().then(() => {
-        $('#newsContainer *').attr('tabindex', '-1')
+        $('#newestNewsContainer *').attr('tabindex', '-1')
     })
 }
 
@@ -115,9 +114,9 @@ function showFatalStartupError(){
         $('#loadingContainer').fadeOut(250, () => {
             document.getElementById('overlayContainer').style.background = 'none'
             setOverlayContent(
-                'Fatal Error: Unable to Load Distribution Index',
-                '배포 색인을 다운로드할 서버에 연결할 수 없습니다. 불러올 수 있는 로컬 복사본이 없습니다. <br><br>배포 색인은 최신 서버 정보를 제공하는 필수 파일입니다. 런처가 없으면 시작할 수 없습니다. 인터넷에 연결되어 있는지 확인하고 응용 프로그램을 다시 시작합니다.',
-                '닫기'
+                Lang.queryJS('uibinder.startup.fatalErrorTitle'),
+                Lang.queryJS('uibinder.startup.fatalErrorMessage'),
+                Lang.queryJS('uibinder.startup.closeButton')
             )
             setOverlayHandler(() => {
                 const window = remote.getCurrentWindow()
@@ -164,7 +163,7 @@ function syncModConfigurations(data){
             for(let mdl of mdls){
                 const type = mdl.rawModule.type
 
-                if(type === Type.ForgeMod || type === Type.LiteMod || type === Type.LiteLoader){
+                if(type === Type.ForgeMod || type === Type.LiteMod || type === Type.LiteLoader || type === Type.FabricMod){
                     if(!mdl.getRequired().value){
                         const mdlID = mdl.getVersionlessMavenIdentifier()
                         if(modsOld[mdlID] == null){
@@ -199,7 +198,7 @@ function syncModConfigurations(data){
 
             for(let mdl of mdls){
                 const type = mdl.rawModule.type
-                if(type === Type.ForgeMod || type === Type.LiteMod || type === Type.LiteLoader){
+                if(type === Type.ForgeMod || type === Type.LiteMod || type === Type.LiteLoader || type === Type.FabricMod){
                     if(!mdl.getRequired().value){
                         mods[mdl.getVersionlessMavenIdentifier()] = scanOptionalSubModules(mdl.subModules, mdl)
                     } else {
@@ -254,7 +253,7 @@ function scanOptionalSubModules(mdls, origin){
         for(let mdl of mdls){
             const type = mdl.rawModule.type
             // Optional types.
-            if(type === Type.ForgeMod || type === Type.LiteMod || type === Type.LiteLoader){
+            if(type === Type.ForgeMod || type === Type.LiteMod || type === Type.LiteLoader || type === Type.FabricMod){
                 // It is optional.
                 if(!mdl.getRequired().value){
                     mods[mdl.getVersionlessMavenIdentifier()] = scanOptionalSubModules(mdl.subModules, mdl)
@@ -333,10 +332,12 @@ async function validateSelectedAccount(){
             ConfigManager.save()
             const accLen = Object.keys(ConfigManager.getAuthAccounts()).length
             setOverlayContent(
-                '로그인을 새로고침 할 수 없습니다.',
-                `<strong>${selectedAcc.displayName}</strong>에 대한 로그인을 새로고침 할 수 없습니다. ${accLen > 0 ? '다른 계정을 선택하거나 ' : ''} 다시 로그인 하십시오.`,
-                'Login',
-                'Select Another Account'
+                Lang.queryJS('uibinder.validateAccount.failedMessageTitle'),
+                accLen > 0
+                    ? Lang.queryJS('uibinder.validateAccount.failedMessage', { 'account': selectedAcc.displayName })
+                    : Lang.queryJS('uibinder.validateAccount.failedMessageSelectAnotherAccount', { 'account': selectedAcc.displayName }),
+                Lang.queryJS('uibinder.validateAccount.loginButton'),
+                Lang.queryJS('uibinder.validateAccount.selectAnotherAccountButton')
             )
             setOverlayHandler(() => {
 

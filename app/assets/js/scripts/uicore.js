@@ -10,6 +10,7 @@ const {ipcRenderer, shell, webFrame} = require('electron')
 const remote                         = require('@electron/remote')
 const isDev                          = require('./assets/js/isdev')
 const { LoggerUtil }                 = require('helios-core')
+const Lang                           = require('./assets/js/langloader')
 
 const loggerUICore             = LoggerUtil.getLogger('UICore')
 const loggerAutoUpdater        = LoggerUtil.getLogger('AutoUpdater')
@@ -42,13 +43,13 @@ if(!isDev){
         switch(arg){
             case 'checking-for-update':
                 loggerAutoUpdater.info('Checking for update..')
-                settingsUpdateButtonStatus('새로운 업데이트를 확인하는 중..', true)
+                settingsUpdateButtonStatus(Lang.queryJS('uicore.autoUpdate.checkingForUpdateButton'), true)
                 break
             case 'update-available':
                 loggerAutoUpdater.info('New update available', info.version)
                 
                 if(process.platform === 'darwin'){
-                    info.darwindownload = `https://github.com/gyeongent/HyunHyunLauncher/releases/download/v${info.version}/hyunhyunforest-setup-${info.version}${process.arch === 'arm64' ? '-arm64' : '-x64'}.dmg`
+                    info.darwindownload = `https://github.com/dscalzi/HeliosLauncher/releases/download/v${info.version}/Helios-Launcher-setup-${info.version}${process.arch === 'arm64' ? '-arm64' : '-x64'}.dmg`
                     showUpdateUI(info)
                 }
                 
@@ -56,7 +57,7 @@ if(!isDev){
                 break
             case 'update-downloaded':
                 loggerAutoUpdater.info('Update ' + info.version + ' ready to be installed.')
-                settingsUpdateButtonStatus('지금 설치', false, () => {
+                settingsUpdateButtonStatus(Lang.queryJS('uicore.autoUpdate.installNowButton'), false, () => {
                     if(!isDev){
                         ipcRenderer.send('autoUpdateAction', 'installUpdateNow')
                     }
@@ -65,7 +66,7 @@ if(!isDev){
                 break
             case 'update-not-available':
                 loggerAutoUpdater.info('No new update found.')
-                settingsUpdateButtonStatus('업데이트 확인')
+                settingsUpdateButtonStatus(Lang.queryJS('uicore.autoUpdate.checkForUpdatesButton'))
                 break
             case 'ready':
                 updateCheckListener = setInterval(() => {
@@ -108,7 +109,7 @@ function showUpdateUI(info){
     //TODO Make this message a bit more informative `${info.version}`
     document.getElementById('image_seal_container').setAttribute('update', true)
     document.getElementById('image_seal_container').onclick = () => {
-        setOverlayContent('업데이트 사용가능', '런처에 대한 새로운 업데이트를 사용할 수 있습니다. 지금 설치하시겠습니까?', '지금 설치', '나중에 할게요')
+        /*setOverlayContent('Update Available', 'A new update for the launcher is available. Would you like to install now?', 'Install', 'Later')
         setOverlayHandler(() => {
             if(!isDev){
                 ipcRenderer.send('autoUpdateAction', 'installUpdateNow')
@@ -120,7 +121,7 @@ function showUpdateUI(info){
         setDismissHandler(() => {
             toggleOverlay(false)
         })
-        toggleOverlay(true, true)
+        toggleOverlay(true, true)*/
         switchView(getCurrentView(), VIEWS.settings, 500, 500, () => {
             settingsNavItemListener(document.getElementById('settingsNavUpdate'), false)
         })
@@ -184,8 +185,8 @@ document.addEventListener('readystatechange', function () {
         //const targetWidth3 = document.getElementById("launch_button").getBoundingClientRect().width
 
         document.getElementById('launch_details').style.maxWidth = 266.01
-        document.getElementById('launch_progress').style.width = 170.8
-        document.getElementById('launch_details_right').style.maxWidth = 170.8
+        document.getElementById('launch_progress').style.width = 266.01
+        document.getElementById('launch_details_right').style.maxWidth = 266.01
         document.getElementById('launch_progress_label').style.width = 53.21
         
     }

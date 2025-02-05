@@ -1,15 +1,17 @@
-const { DistributionAPI } = require('helios-core/common')
+const { DistributionAPI } = require("helios-core/common");
 
-const ConfigManager = require('./configmanager')
+const ConfigManager = require("./configmanager");
 
-exports.REMOTE_DISTRO_URL = 'https://gyeong.wstr.fr/nebula/distribution.json'
+// Old WesterosCraft url.
+// exports.REMOTE_DISTRO_URL = 'http://mc.westeroscraft.com/WesterosCraftLauncher/distribution.json'
+exports.REMOTE_DISTRO_URL = "https://hyunhyun.wstr.fr/nebula/distribution.json";
 
 const api = new DistributionAPI(
-    ConfigManager.getLauncherDirectory(),
-    null, // Injected forcefully by the preloader.
-    null, // Injected forcefully by the preloader.
-    exports.REMOTE_DISTRO_URL,
-    false
-)
+  ConfigManager.getLauncherDirectory(),
+  null, // Injected forcefully by the preloader.
+  null, // Injected forcefully by the preloader.
+  exports.REMOTE_DISTRO_URL,
+  false
+);
 
-exports.DistroAPI = api
+exports.DistroAPI = api;

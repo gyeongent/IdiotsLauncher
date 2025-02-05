@@ -1,8 +1,8 @@
-appId: 'hyunhyunforest'
-productName: '현현의 숲'
+appId: 'hyunulauncher'
+productName: '혀누와 얼간이들 런처'
 artifactName: '${productName}-setup-${version}.${ext}'
 
-copyright: '© 2023 GYEONG.'
+copyright: 'Copyright © 2018-2024 Daniel Scalzi'
 
 asar: true
 compression: 'maximum'

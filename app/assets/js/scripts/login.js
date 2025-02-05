@@ -220,10 +220,7 @@ loginButton.addEventListener('click', () => {
         } else {
             // Uh oh.
             msftLoginLogger.error('Unhandled error during login.', displayableError)
-            actualDisplayableError = {
-                title: '알 수 없는 로그인 오류',
-                desc: '알 수 없는 오류가 발생했습니다. 자세한 내용은 콘솔을 참조하십시오.'
-            }
+            actualDisplayableError = Lang.queryJS('login.error.unknown')
         }
 
         setOverlayContent(actualDisplayableError.title, actualDisplayableError.desc, Lang.queryJS('login.tryAgain'))
