@@ -1,11 +1,11 @@
 {
-  "name": "hyunulauncher",
-  "version": "1.0.0",
-  "productName": "혀누와 얼간이들 런처처",
-  "description": "혀누와 얼간이들 마인크래프트 이벤트 런처처",
+  "name": "idiotslauncher",
+  "version": "1.0.1",
+  "productName": "혀누와 얼간이들 런처",
+  "description": "혀누와 얼간이들 마인크래프트 이벤트 런처",
   "author": "GyeongMin Lee (https://github.com/gyeongent/)",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/gyeongent/",
+  "homepage": "https://github.com/gyeongent/IdiotsLauncher",
   "bugs": {},
   "private": true,
   "main": "index.js",
@@ -47,6 +47,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dscalzi/HeliosLauncher.git"
+    "url": "git+https://github.com/gyeongent/IdiotsLauncher.git"
   }
 }
