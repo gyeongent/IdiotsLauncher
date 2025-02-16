@@ -6,19 +6,13 @@
     >
     
     <channel>
-        <title>현현의 숲 시즌2</title>
+        <title>패치노트 2025-02-16</title>
         <link>https://hyunu.gyeong.net/</link>
         <item>
-            <title>현현의 숲 런처가 배포되었습니다.</title>
-            <content:encoded>
-                현현의 숲 런처가 배포되었습니다! 플레이를 클릭하면 자동으로 게임파일이 다운로드됩니다.
-                
-                필수 및 선택 모드를 수정하지 말아주세요, 무결성 검증을 통해 파일을 확인합니다.
-                
-                추가 모드 적용을 원하는 경우, 드래그하여 모드 추가를 통해 추가 모드를 추가해주세요.
-            </content:encoded>
+            <title>패치노트 2025-02-16</title>
+            <![CDATA[ <p><b>현재 패치노트가 릴리스 되지 않았습니다.</b></p> <p>자세한 내용은<a href="https://showy-feels-283.notion.site/1654a92c3ed7809fb997d5224f59a39f?v=1654a92c3ed7809f9603000c1e90377e&pvs=74">위키</a>에서 확인하세요.</p> ]]>
             <language>ko</language>
-            <dc:creator>현현의 숲 런처 개발자</dc:creator>
+            <dc:creator>런처 개발자</dc:creator>
             <pubDate>Sun, 18 Aug 2024</pubDate>
         </item>
     </channel>
