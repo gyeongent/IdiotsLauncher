@@ -1,5 +1,5 @@
-appId: "IdiotsLauncher"
-productName: "IdiotsLauncher"
+appId: "혀누와 얼간이들 이벤트 런처"
+productName: "혀누와 얼간이들 이벤트 런처"
 artifactName: "${productName}-setup-${version}.${ext}"
 
 copyright: "Copyright © 2024 GyeongMin Lee"
